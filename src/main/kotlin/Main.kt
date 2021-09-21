@@ -53,14 +53,13 @@ data class Post(
     val postponedId: Int = 0,      //Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере.
 
 ) {
-    object WallService {
-        var posts = emptyArray<Post>()
-
-        fun add(post: Post): Post {
-
-        }
-    }
+    var newId = id
+        set(value) {
+            if (value <= 0) return
+            field = value
 }
-fun main (){
+}
 
+fun main (){
+ WallService.add()
 }

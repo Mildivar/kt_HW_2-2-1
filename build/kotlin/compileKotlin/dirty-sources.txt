@@ -1,0 +1,2 @@
+C:\Users\Mildivar\Documents\NETOLOGY\KOTLIN\kt_HW_2-2-1\src\main\kotlin\Main.kt
+C:\Users\Mildivar\Documents\NETOLOGY\KOTLIN\kt_HW_2-2-1\src\main\kotlin\WallServise.kt
