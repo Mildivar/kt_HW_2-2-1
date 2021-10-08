@@ -8,11 +8,12 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    mavenCentral()
+//    mavenCentral()
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.21'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.30'
+    implementation 'junit:junit:4.13.2'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
 
 //    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'

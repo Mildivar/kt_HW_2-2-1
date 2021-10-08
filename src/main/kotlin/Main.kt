@@ -3,16 +3,16 @@ import java.util.*
 data class Post(
     val id: Int,
     val ownerId: Int = 1,
-    val fromId: Int,        // идентификатор автора записи (от чьего имени опубликована запись).
+    val fromId: Int = 0,        // идентификатор автора записи (от чьего имени опубликована запись).
     val createBy: Int = 0,      // идентификатор администратора, который опубликовал запись (возвращается
     // только для сообществ при запросе с ключом доступа администратора). Возвращается в записях,
     // опубликованных менее 24 часов назад.
-    val date: Int,      // время публикации записи в формате unixtime
+    val date: String = "",      // время публикации записи в формате unixtime
     val text: String = "",       // текст записи
     val replyOwnerId: Int = 0,      // идентификатор владельца записи, в ответ на которую была оставлена текущая.
     val replyPostId: Int = 0,       // идентификатор записи, в ответ на которую была оставлена текущая.
     val friendsOnly: Boolean = false,       //1, если запись была создана с опцией «Только для друзей».
-    val comments: Objects,      // информация о комментариях к записи, объект с полями:
+    val comments: Objects? = null,      // информация о комментариях к записи, объект с полями:
     /* count (integer) — количество комментариев;
     can_post* (integer, [0,1]) — информация о том, может ли текущий пользователь комментировать запись
     (1 — может, 0 — не может);
@@ -20,20 +20,20 @@ data class Post(
     can_close(boolean) — может ли текущий пользователь закрыть комментарии к записи;
     can_open(boolean) — может ли текущий пользователь открыть комментарии к записи.*/
 
-    val copyright: Objects,     //источник материала, объект с полями:
+    val copyright: Objects? = null,     //источник материала, объект с полями:
     /*id (integer);
     link* (string);
     name* (string);
     type* (string).*/
-    val likes: Objects,      //информация о лайках к записи, объект с полями:
+    val likes: Objects? = null,      //информация о лайках к записи, объект с полями:
     /*count (integer) — число пользователей, которым понравилась запись;
     user_likes* (integer, [0,1]) — наличие отметки «Мне нравится» от текущего пользователя (1 — есть, 0 — нет);
     can_like* (integer, [0,1]) — информация о том, может ли текущий пользователь поставить отметку «Мне нравится» (1 — может, 0 — не может);
     can_publish* (integer, [0,1]) — информация о том, может ли текущий пользователь сделать репост записи (1 — может, 0 — не может).*/
-    val reposts: Objects,       //информация о репостах записи («Рассказать друзьям»), объект с полями:
+    val reposts: Objects? = null,       //информация о репостах записи («Рассказать друзьям»), объект с полями:
     /* count (integer) — число пользователей, скопировавших запись;
     user_reposted* (integer, [0,1]) — наличие репоста от текущего пользователя (1 — есть, 0 — нет). */
-    val views: Objects,     // Информация о просмотрах записи. Объект с единственным полем:
+    val views: Objects? = null,     // Информация о просмотрах записи. Объект с единственным полем:
     //count (integer) — число просмотров записи.
     val postType: String = "",       //тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
     val canPin: Boolean = true,        //информация о том, может ли текущий пользователь закрепить запись (1 — может, 0 — не может).
@@ -42,7 +42,7 @@ data class Post(
     val isPinned: Int = 0,      //информация о том, что запись закреплена.
     val markedAsAds: Boolean = false,        //информация о том, содержит ли запись отметку "реклама" (1 — да, 0 — нет).
     val isFavorite: Boolean = false,        //если объект добавлен в закладки у текущего пользователя.
-    val donut: Objects,     //информация о записи VK Donut:
+    val donut: Objects? = null,     //информация о записи VK Donut:
     /* is_donut (boolean) — запись доступна только платным подписчикам VK Donut;
     paid_duration (integer) — время, в течение которого запись будет доступна только платным подписчикам VK Donut;
     placeholder (object) — заглушка для пользователей, которые не оформили подписку VK Donut. Отображается вместо содержимого записи.
@@ -53,13 +53,21 @@ data class Post(
     val postponedId: Int = 0,      //Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере.
 
 ) {
-    var newId = id
-        set(value) {
-            if (value <= 0) return
-            field = value
-}
+//    var newId = id
+//        set(value) {
+//            if (value <= 0) return
+//            field = value
+//}
 }
 
 fun main (){
- WallService.add()
+ val post1 = Post(5)
+    val post2 = Post(10)
+
+    WallService.add(post1)
+    WallService.add(post2)
+ val post1Ch = Post(text="Changes",replyOwnerId = 2, id = 5)
+    WallService.update(post1Ch)
+//    WallService.update(post2)
+    println(post1Ch)
 }
