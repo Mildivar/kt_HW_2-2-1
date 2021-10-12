@@ -32,7 +32,7 @@ class WallServiceTest {
 }
 
 
-<<<<<<< HEAD
+
 //    @Test
 //    fun addTest() {
 //        val actual =
@@ -152,65 +152,5 @@ class WallServiceTest {
 //        assertEquals(service, result)
 //    }
 //}
-=======
-   @Test
-   fun updateTest() {
-       val service =
-           Post(
-               id = 0,
-               ownerId = 1,
-               fromId = 0,
-               createBy = 0,
-               date = "",
-               text = "",
-               replyOwnerId = 2123,
-               replyPostId = 14112,
-               friendsOnly = true,
-               comments = null,
-               copyright = null,
-               likes = null,
-               reposts = null,
-               views = null,
-               postType = "",
-               canPin = true,
-               canDelete = false,
-               canEdit = false,
-               isPinned = 0,
-               markedAsAds = true,
-               isFavorite = false,
-               donut = null,
-               postponedId = 12314
-           )
 
-       val result = WallService.update(
-           Post(
-               id = 0,
-               ownerId = 1,
-               fromId = 0,
-               createBy = 0,
-               date = "",
-               text = "retry",
-               replyOwnerId = 2123,
-               replyPostId = 14112,
-               friendsOnly = true,
-               comments = null,
-               copyright = null,
-               likes = null,
-               reposts = null,
-               views = null,
-               postType = "",
-               canPin = true,
-               canDelete = false,
-               canEdit = false,
-               isPinned = 0,
-               markedAsAds = true,
-               isFavorite = false,
-               donut = null,
-               postponedId = 12314
-           )
-       )
 
-       assertEquals(service, result)
-   }
-}
->>>>>>> 35b24f5187a5c84916d6492ec052ffd3ed61f033
