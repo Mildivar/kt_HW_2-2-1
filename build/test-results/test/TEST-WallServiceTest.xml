@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WallServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-08T01:24:30" hostname="MSI" time="0.022">
+<testsuite name="WallServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-12T14:55:55" hostname="MSI" time="0.02">
   <properties/>
-  <testcase name="addTest" classname="WallServiceTest" time="0.022"/>
-  <system-out><![CDATA[0
-Post(id=5, ownerId=1, fromId=0, createBy=0, date=, text=, replyOwnerId=2123, replyPostId=14112, friendsOnly=true, comments=null, copyright=null, likes=null, reposts=null, views=null, postType=, canPin=true, canDelete=false, canEdit=false, isPinned=0, markedAsAds=true, isFavorite=false, donut=null, postponedId=12314)
-]]></system-out>
+  <testcase name="update_NotExisting" classname="WallServiceTest" time="0.019"/>
+  <testcase name="add" classname="WallServiceTest" time="0.001"/>
+  <testcase name="update_Existing" classname="WallServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

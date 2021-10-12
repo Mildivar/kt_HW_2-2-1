@@ -1,7 +1,7 @@
 import java.util.*
 
 data class Post(
-    val id: Int,
+    var id: Int,
     val ownerId: Int = 1,
     val fromId: Int = 0,        // идентификатор автора записи (от чьего имени опубликована запись).
     val createBy: Int = 0,      // идентификатор администратора, который опубликовал запись (возвращается
@@ -52,22 +52,22 @@ data class Post(
     duration — время, в течение которого запись будет доступна только платным подписчикам VK Donut. */
     val postponedId: Int = 0,      //Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере.
 
-) {
-//    var newId = id
-//        set(value) {
-//            if (value <= 0) return
-//            field = value
-//}
-}
+)
 
-fun main (){
- val post1 = Post(5)
-    val post2 = Post(10)
-
-    WallService.add(post1)
-    WallService.add(post2)
- val post1Ch = Post(text="Changes",replyOwnerId = 2, id = 5)
-    WallService.update(post1Ch)
-//    WallService.update(post2)
-    println(post1Ch)
+fun main() {
+//    val post1 = Post(5)
+//    val post2 = Post(10)
+//    val post3 = Post(2)
+//
+//    WallService.add(post1)
+//    WallService.add(post2)
+//    WallService.add(post3)
+//
+//    println(post1)
+//    println(post2)
+//    println(post3)
+//    val post1Ch = Post(text = "Changes", ownerId = 898, replyOwnerId = 2, id = -99)
+//    WallService.update(post1Ch)
+////    WallService.update(post2)
+//    println(post1Ch)
 }
