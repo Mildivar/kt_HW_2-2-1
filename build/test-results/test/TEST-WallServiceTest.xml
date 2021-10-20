@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WallServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-20T14:43:55" hostname="MSI" time="0.034">
+  <properties/>
+  <testcase name="update_NotExisting" classname="WallServiceTest" time="0.033"/>
+  <testcase name="add" classname="WallServiceTest" time="0.001"/>
+  <testcase name="update_Existing" classname="WallServiceTest" time="0.0"/>
+  <system-out><![CDATA[o
+o
+o
+o
+o
+o
+o
+o
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

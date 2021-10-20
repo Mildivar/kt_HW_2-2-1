@@ -1,5 +1,3 @@
-import java.util.*
-
 data class Post(
     var id: Int,
     val ownerId: Int = 0,
@@ -60,23 +58,12 @@ data class Post(
     all — всю информацию о VK Donut.
     duration — время, в течение которого запись будет доступна только платным подписчикам VK Donut. */
     val postponedId: Int = 0,      //Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере.
-
+    val attachments: Attachments = Attachment().addNewAttach("photo")
 )
 
 fun main() {
-//    val post1 = Post(5)
-//    val post2 = Post(10)
-//    val post3 = Post(2)
-//
-//    WallService.add(post1)
-//    WallService.add(post2)
-//    WallService.add(post3)
-//
-//    println(post1)
-//    println(post2)
-//    println(post3)
-//    val post1Ch = Post(text = "Changes", ownerId = 898, replyOwnerId = 2, id = -99)
-//    WallService.update(post1Ch)
-////    WallService.update(post2)
-//    println(post1Ch)
+    val ww = Attachment().addNewAttach("video")
+    println(ww)
+    val www = Attachment().addNewAttach("photo")
+    println(www)
 }
