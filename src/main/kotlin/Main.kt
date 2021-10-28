@@ -62,8 +62,9 @@ data class Post(
 )
 
 fun main() {
-    val ww = Attachment().addNewAttach("video")
-    println(ww)
-    val www = Attachment().addNewAttach("photo")
-    println(www)
+//    val ww = Attachment().addNewAttach("video")
+//    println(ww)
+//    val www = Attachment().addNewAttach("photo")
+//    println(www)
+
 }
