@@ -1,5 +1,8 @@
+import java.lang.NullPointerException
+
 class WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         val newPost = post.copy()
@@ -18,4 +21,17 @@ class WallService {
             }
         return false
     }
+
+    fun createComment(comment: Comment):Comment{
+        val newComment = comment
+        for (posted in posts){
+
+                if (posted.id == newComment.post_id) {
+                    comments += newComment
+                    return newComment
+                }
+                 throw PostNotFoundException("PostNotFoundException")
+    }
+        return newComment
+}
 }

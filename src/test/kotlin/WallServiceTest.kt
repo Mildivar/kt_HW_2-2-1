@@ -29,128 +29,21 @@ class WallServiceTest {
         val result = service.update(update)
         assertFalse(result)
     }
+
+//    @Test
+//    fun createComment_CommentIsExists(){
+//        val service = WallService()
+//        val actual = Comment(post_id = 9,text = "try")
+//        val result = service.createComment(Comment(post_id = 32, text = "ttttry"))
+//        assertEquals(result, actual)
+//    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val service = WallService()
+        service.add(Post(12))
+        val expected = PostNotFoundException("PostNotFoundException") //Comment(post_id = 12)
+        val actual = service.createComment(Comment(post_id = 14))
+        assertEquals(expected, actual)
+    }
 }
-
-
-
-//    @Test
-//    fun addTest() {
-//        val actual =
-//            Post(
-//                id = 6,
-//                ownerId = 1,
-//                fromId = 0,
-//                createBy = 0,
-//                date = "",
-//                text = "",
-//                replyOwnerId = 2123,
-//                replyPostId = 14112,
-//                friendsOnly = true,
-//                comments = null,
-//                copyright = null,
-//                likes = null,
-//                reposts = null,
-//                views = null,
-//                postType = "",
-//                canPin = true,
-//                canDelete = false,
-//                canEdit = false,
-//                isPinned = 0,
-//                markedAsAds = true,
-//                isFavorite = false,
-//                donut = null,
-//                postponedId = 12314
-//            )
-//
-//
-//        val result = WallService.add(Post(
-//            id = 5,
-//            ownerId = 1,
-//            fromId = 0,
-//            createBy = 0,
-//            date = "",
-//            text = "",
-//            replyOwnerId = 2123,
-//            replyPostId = 14112,
-//            friendsOnly = true,
-//            comments = null,
-//            copyright = null,
-//            likes = null,
-//            reposts = null,
-//            views = null,
-//            postType = "",
-//            canPin = true,
-//            canDelete = false,
-//            canEdit = false,
-//            isPinned = 0,
-//            markedAsAds = true,
-//            isFavorite = false,
-//            donut = null,
-//            postponedId = 12314
-//        )
-//        )
-//        assertEquals(actual, result)
-//    }
-//
-//    @Test
-//    fun updateTest() {
-//        val service =
-//            Post(
-//                id = 0,
-//                ownerId = 1,
-//                fromId = 0,
-//                createBy = 0,
-//                date = "",
-//                text = "",
-//                replyOwnerId = 2123,
-//                replyPostId = 14112,
-//                friendsOnly = true,
-//                comments = null,
-//                copyright = null,
-//                likes = null,
-//                reposts = null,
-//                views = null,
-//                postType = "",
-//                canPin = true,
-//                canDelete = false,
-//                canEdit = false,
-//                isPinned = 0,
-//                markedAsAds = true,
-//                isFavorite = false,
-//                donut = null,
-//                postponedId = 12314
-//            )
-//
-//        val result = WallService.update(
-//            Post(
-//                id = 0,
-//                ownerId = 1,
-//                fromId = 0,
-//                createBy = 0,
-//                date = "",
-//                text = "retry",
-//                replyOwnerId = 2123,
-//                replyPostId = 14112,
-//                friendsOnly = true,
-//                comments = null,
-//                copyright = null,
-//                likes = null,
-//                reposts = null,
-//                views = null,
-//                postType = "",
-//                canPin = true,
-//                canDelete = false,
-//                canEdit = false,
-//                isPinned = 0,
-//                markedAsAds = true,
-//                isFavorite = false,
-//                donut = null,
-//                postponedId = 12314
-//            )
-//        )
-//
-//        assertEquals(service, result)
-//    }
-//}
-
-
